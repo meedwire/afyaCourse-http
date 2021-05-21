@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+.card-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: rgba(181,144,207,1);
+  border-radius: 20px;
+  height: 100px;
+}
+
+body {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  font-family: 'Oxygen', sans-serif;
+  height: 100vh;
+  background: rgb(181,144,207);
+  background: linear-gradient(0deg, rgba(181,144,207,1) 0%, rgba(134,105,255,1) 100%);
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  height: 100px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: calc(100vh - 150px);
+
+  align-items: center;
+  padding-top: 20px;
+  
+}
+
+.card-container{
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 40%;
+  box-shadow: 0 0 51px 14px #724dae6e;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.divider{
+  margin: 10px 0px 10px 0px;
+  border-bottom: 0.001em solid #dadada;
+  border-color: rgb(181,144,207);
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-gap: 10px;
+}
+
+
+/* ================ input style ========================= */
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-label{
+  margin: 0 0 5px 0;
+}
+
+.input{
+  transition: all 300ms;
+  outline: none;
+  padding: 10px;
+  border: 1px solid rgb(181,144,207, 0.8);
+  margin-bottom: 10px;
+}
+
+.input:focus{
+  border: 1px solid rgb(111, 10, 184);
+}
+
+.send-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(181,144,207);
+  border: none;
+  color: white;
+  transition: all 300ms;
+}
+
+.send-button:active{
+  transform: scale(1.007);
+  box-shadow: 0 0 10px 3px rgb(181,144,207);
+}
