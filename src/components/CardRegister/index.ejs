@@ -41,7 +41,7 @@
                 label: 'CEP:',
                 name: 'postcode',
                 type: "text",
-                mask: '$$.$$$-$$',
+                mask: '$$.$$$-$$$',
                 error: 'CEP é obrigatório !!'
             }
         )
@@ -94,5 +94,11 @@
                 }
             )
         %> 
-    <button class="send-button" >ENVIAR</button>
+    <button type="submit" class="send-button" >ENVIAR</button>
+
+    <div class="divider" ></div>
+
+    <button type="button" class="send-button" >
+        <a href="/login">LOGIN</a>
+    </button>
 </form>

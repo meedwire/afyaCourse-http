@@ -20,9 +20,9 @@ const pool = new Pool({
     database: process.env.DB_DATABASE,
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
-    ssl:{
+    ssl: !env ? {
         rejectUnauthorized: false
-    }
+    } : undefined
 })
 
 class DB {
