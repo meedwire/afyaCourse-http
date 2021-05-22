@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Login Acompanhamento COVID
+  </title>
+  <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <%- include('../components/Header/index',  {text: 'Acompanhe Vacinas COVID-19'}) %>
+  </header>
+  <section class="container" >
+    <%- include('../components/CardLogin/index', {message: message}); %>
+  </section>
+  <footer>
+    <%- include('../components/Footer/index') %>
+  </footer>
+</body>
+</html>

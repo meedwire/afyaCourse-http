@@ -9,7 +9,7 @@
 }
 
 .card-container::-webkit-scrollbar-thumb {
-  background-color: rgba(181,144,207,1);
+  background-color: rgba(181,144,207,0.5);
   border-radius: 20px;
   height: 100px;
 }
@@ -20,8 +20,6 @@ body {
   margin: 0px;
   font-family: 'Oxygen', sans-serif;
   height: 100vh;
-  background: rgb(181,144,207);
-  background: linear-gradient(0deg, rgba(181,144,207,1) 0%, rgba(134,105,255,1) 100%);
   box-sizing: border-box;
 }
 
@@ -30,7 +28,13 @@ header{
   flex-direction: column;
   padding: 10px;
   align-items: center;
-  height: 100px;
+  height: 30px;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -42,7 +46,6 @@ h1 {
   flex-direction: column;
   flex: 1;
   height: calc(100vh - 150px);
-
   align-items: center;
   padding-top: 20px;
   
@@ -53,9 +56,10 @@ h1 {
   padding: 20px;
   border-radius: 5px;
   min-width: 40%;
-  box-shadow: 0 0 51px 14px #724dae6e;
+  box-shadow: 0 0 63px -24px #724dae6e;
   max-height: 70vh;
   overflow: auto;
+  border: 1px solid #724dae6e;
 }
 
 .divider{
@@ -77,6 +81,17 @@ h1 {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.error{
+  display: none;
+}
+
+.error.active{
+  display: flex;
+  margin: 0;
+  color: rgba(255, 107, 61, 0.644);
+  margin-bottom: 10px;
 }
 
 .input-label{
@@ -110,4 +125,20 @@ h1 {
 .send-button:active{
   transform: scale(1.007);
   box-shadow: 0 0 10px 3px rgb(181,144,207);
+}
+
+/* CARD LOGIN */
+
+.alert-register{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  border: 1px solid #24ce10;
+  background-color: #48f7007a;
+  color: #093800;
+  max-width: 500px;
+  margin: 0 auto;
+  line-break: anywhere;
+  align-items: center;
+  align-self: center;
 }

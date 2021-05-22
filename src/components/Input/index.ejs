@@ -1,0 +1,48 @@
+<div class="input-container">
+    <p class="input-label">
+        <%= label %>
+    </p>
+    <input id="<%= name %>" class="input" name="<%= name %>" type="<%= type %>">
+
+    <% if (error){ %>
+        <p id="<%=name%>error" class="error" ><%= error %></p>
+    <% } %>
+</div>
+<script>
+    document.getElementById("<%- name %>").addEventListener('blur', (e) => {
+        if (e.currentTarget.value === ''){
+            document.getElementById("<%- name %>"+'error').className = "error active"
+        }
+    })
+
+    document.getElementById("<%- name %>").addEventListener('focus', (e) => {
+        document.getElementById("<%- name %>"+'error').className = "error"
+    })
+
+    document.getElementById("<%- name %>").addEventListener('input', (e) => {
+ 
+        if ("<%- mask %>") {
+            const maskArray = "<%- mask %>".split('');
+            const maskedArray = [];
+            const value = e.currentTarget.value.replace(/\D/g, '');
+            let index = 0;
+
+            let valueArray = value.split('');
+
+            maskArray.forEach((v, i) => {
+                if (v === '$') {
+                    maskedArray[i] = valueArray[index] ?? '';
+                    index = index + 1;
+                } else {
+                    maskedArray[i] = valueArray[index] ? v : '';
+                }
+            });
+
+            const valueMasked = maskedArray.join('');
+
+            e.currentTarget.value = valueMasked;
+
+        }
+    })
+
+</script>

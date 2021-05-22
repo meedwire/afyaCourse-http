@@ -1,0 +1,40 @@
+<form action="/login" method="POST" class="card-container" >
+    <% if (message) { %>
+        <div class="alert-register" >
+            <%= message %> 
+        </div>
+    <% } %>
+    <h1>Login de Usuário</h1>
+    <div class="divider" ></div>
+    <%- 
+        include('../../components/Input/index',
+            {
+                label: 'CPF:',
+                name: 'user',
+                type: "text",
+                mask: '$$$.$$$.$$$-$$',
+                error: 'CPF é obrigatório !!'
+            }
+        )
+    %> 
+    <%- 
+        include('../../components/Input/index',
+            {
+                label: 'Senha:',
+                name: 'password',
+                type: "password",
+                mask: null,
+                error: 'A senha obrigatório, a mesma enviada para seu email !!'
+            }
+        )
+    %>
+    <div class="divider" ></div>
+
+    <button type="submit" class="send-button" >ENTRAR</button>
+
+    <div class="divider" ></div>
+
+    <button type="button" class="send-button" >
+        <a href="/register">CADASTRAR</a>
+    </button>
+</form>

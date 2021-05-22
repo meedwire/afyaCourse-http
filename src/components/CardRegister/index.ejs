@@ -1,0 +1,98 @@
+<form action="/register" method="POST" class="card-container" >
+    <h1>Cadastro de Paciente</h1>
+    <div class="divider" ></div>
+    <%- 
+        include('../../components/Input/index',
+            {
+                label: 'CPF:',
+                name: 'cpf',
+                type: "text",
+                mask: '$$$.$$$.$$$-$$',
+                error: 'CPF é obrigatório !!'
+            }
+        )
+    %> 
+    <%- 
+    include('../../components/Input/index',
+        {
+            label: 'E-mail:',
+            name: 'email',
+            type: "mail",
+            mask: null,
+            error: 'E-mail é obrigatório !!'
+        }
+    )
+%> 
+    <%- 
+        include('../../components/Input/index',
+            {
+                label: 'Nome Completo:',
+                name: 'name',
+                type: "text",
+                mask: null,
+                error: 'Nome é obrigatório !!'
+            }
+        )
+    %>
+    <div class="divider" ></div>
+    <%-
+        include('../../components/Input/index',
+            {
+                label: 'CEP:',
+                name: 'postcode',
+                type: "text",
+                mask: '$$.$$$-$$',
+                error: 'CEP é obrigatório !!'
+            }
+        )
+    %>
+
+    <div class="row" >
+        <%-
+            include('../../components/Input/index',
+                {
+                    label: 'Endereço:',
+                    name: 'street',
+                    type: "text",
+                    mask: null,
+                    error: 'Endereço é obrigatório !!'
+                }
+            )
+        %> 
+        <%-
+            include('../../components/Input/index',
+                {
+                    label: 'Número:', 
+                    name: 'number', 
+                    type: 'number', 
+                    mask: null,
+                    error: 'Número é obrigatório !!'
+                }
+            )
+        %> 
+    </div>
+    <%-
+        include('../../components/Input/index',
+            {
+                label: 'Complemento',
+                name: 'complement',
+                type: "text",
+                mask: null,
+                error: null
+            }
+        )
+    %>
+    <div class="divider" ></div>
+        <%-
+            include('../../components/Input/index',
+                {
+                    label: 'N° Carteira de vacinação:',
+                    name: 'number_card',
+                    type: "text",
+                    mask: null,
+                    error: 'N° da carteira é obrigatório !!'
+                }
+            )
+        %> 
+    <button class="send-button" >ENVIAR</button>
+</form>
