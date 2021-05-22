@@ -1,7 +1,11 @@
 const { Client, Pool } = require('pg')
 
 const path = require('path')
-const dotent = require('dotenv').config({ path: path.join(__dirname, '..', '..', '.development.env') })
+const env = process.env.NODE_ENV === 'development' ? 'development' : 'production'
+
+
+const dotent = require('dotenv').config({ path: path.join(__dirname, '..', '..', `.${env}.env`) })
+
 
 // const client = new Client({
 //     user: process.env.DB_USER,
@@ -11,8 +15,12 @@ const dotent = require('dotenv').config({ path: path.join(__dirname, '..', '..',
 
 const pool = new Pool({
     user: process.env.DB_USER,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD_DB
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    ssl:{
+        rejectUnauthorized: false
+    }
 })
 
 class DB {

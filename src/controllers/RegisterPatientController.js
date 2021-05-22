@@ -4,7 +4,7 @@ class RegisterPatientController {
     constructor() { }
 
     index(req, res, next) {
-        return res.render('index');
+        return res.render('register');
     }
 
     async register(req, res, next) {

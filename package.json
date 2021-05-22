@@ -8,7 +8,7 @@
   },
   "private": true,
   "scripts": {
-    "dev": "set DEBUG=appserver:*&& nodemon -e js,css,ejs ./bin/www localhost 3000",
+    "dev": "set DEBUG=appserver:*&& set NODE_ENV=development&& nodemon -e js,css,ejs ./bin/www localhost 3000",
     "start": "node ./bin/www"
   },
   "dependencies": {
