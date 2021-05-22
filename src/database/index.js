@@ -1,10 +1,12 @@
 const { Client, Pool } = require('pg')
 
 const path = require('path')
-const env = process.env.NODE_ENV === 'development' ? 'development' : 'production'
+const env = process.env.NODE_ENV === 'development' ? 'development' : null
 
 
-const dotent = require('dotenv').config({ path: path.join(__dirname, '..', '..', `.${env}.env`) })
+if (env){
+    const dotent = require('dotenv').config({ path: path.join(__dirname, '..', '..', `.${env}.env`) })
+}
 
 
 // const client = new Client({
