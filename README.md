@@ -8,12 +8,14 @@ Tecnologias envolvidas:
 -       NodeJS
 - Linguagem: 
 -      JavaScript - ES6
-- Objetivo:
--       Criar um sistema de entrada de notas utilizando o console.
 - O que foi utilizado:
--       Foram utilizadas as features do Ecmascript 6, comom arrow functions, async/await, template strings, e programação orientada a objetos. 
- Dillinger itself is open source with a [public repository][dill]
- on GitHub.
+-       Express + ejs + bcrypt + nodemon, dotenv
+- O que foi abordado:
+-       Foram abordados criação de servidor node utilizando express, interfaces dinamicas com ejs, tambem foram utlizados conceitos de Cookies, e criptografia de senha, conexão e armazenamto de dados em banco de dados Postgres, ainda foram abordadas tecnicas de deploy e metodos de HTTP.
+- Objetivo:
+-       Criar um sistema qualquer para exercitar os metodos GET, POST, UPDATE, DELETE.
+- O que foi utilizado:
+-       Foram utilizados conceitos de programação orientada a objeto, conexão com banco de dados, e deploy de aplicação.
 
 ## Installation 
 # Instale o:
@@ -22,9 +24,11 @@ Tecnologias envolvidas:
 # Depois:
 
 ```sh
+npm install
 npm start 
 ```
 # ou
 ```sh
+yarn
 yarn start 
 ```

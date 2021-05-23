@@ -1,23 +1,29 @@
 const Cookie = require("../helpers/Cookie");
+const { Crypto } = require("../helpers/Crypto")
 
 class LoginUserController {
     constructor() { }
 
     index(req, res, next) {
-        return res.render('login', {message: null});
+        return res.render('login', { message: null });
     }
 
-    login(req, res, next) {
-        const {user, password} = req.body
+    async login(req, res, next) {
+        try {
+            const { cpf, password } = req.body
 
-        Cookie.set('loginuser', 1, res, 600000)
+            console.log(cpf, password)
 
-        Cookie.set('teste', 1, res, 600000)
+            const crypto = new Crypto()
 
-        // res.redirect('/home')
+            await crypto.compare(password, cpf)
 
-        console.log(user, password);
-        return res.send('success');
+            Cookie.set('loginuser', 1, res, 600000)
+
+            res.render('info', { message: "Página em construção", error: { status: 'Estamos trabalhando...', stack: 'Atenção !!' } })
+        } catch (error) {
+            res.render('error', { message: error.message, error: { status: 500, stack: 'error' } })
+        }
     }
 }
 

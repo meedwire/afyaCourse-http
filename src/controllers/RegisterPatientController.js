@@ -9,24 +9,25 @@ class RegisterPatientController {
 
     async register(req, res, next) {
         try {
-            const { name, cpf, street, number, postcode, complement, number_card, email} = req.body
+            const { name, cpf, street, number, postcode, complement, number_card, email, password } = req.body
 
-            const user = new User({ name, cpf, street, number, postcode, complement, number_card, email })
+            const user = new User({ name, cpf, street, number, postcode, complement, number_card, email, password })
 
             Object.entries(user.user).forEach(([key, value]) => {
-                
-                if (value === ''){
+
+                if (value === '') {
                     throw new Error(`Ops... Parece que tem algo de errado com seus dados, que tal voltar e revisar ?.`)
                 }
             })
-            
+
 
             await user.save()
-            
-            return res.render('login', {message: 'Um e-mail de confirmação foi enviado para seu e-mail.'});
+
+            res.render('login', { message: 'Um e-mail de confirmação foi enviado para seu e-mail.' });
+
         } catch (error) {
             console.log(error)
-            res.render('error', {message: error.message, error:{status: 500, stack: 'error'}})
+            res.render('error', { message: error.message, error: { status: 500, stack: 'error' } })
         }
     }
 }

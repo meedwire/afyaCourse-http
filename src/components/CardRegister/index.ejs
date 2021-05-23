@@ -13,17 +13,6 @@
         )
     %> 
     <%- 
-    include('../../components/Input/index',
-        {
-            label: 'E-mail:',
-            name: 'email',
-            type: "mail",
-            mask: null,
-            error: 'E-mail é obrigatório !!'
-        }
-    )
-%> 
-    <%- 
         include('../../components/Input/index',
             {
                 label: 'Nome Completo:',
@@ -94,11 +83,35 @@
                 }
             )
         %> 
-    <button type="submit" class="send-button" >ENVIAR</button>
+        <div class="divider" ></div>
+        <%- 
+        include('../../components/Input/index',
+            {
+                label: 'E-mail:',
+                name: 'email',
+                type: "mail",
+                mask: null,
+                error: 'E-mail é obrigatório !!'
+            }
+        )
+        %>
+        <%- 
+        include('../../components/Input/index',
+            {
+                label: 'Senha:',
+                name: 'password',
+                type: "password",
+                mask: null,
+                error: 'Senha é obrigatório !!'
+            }
+        )
+        %>
+        <div class="divider" ></div>
+    <button type="submit" class="button-meed" >ENVIAR</button>
 
     <div class="divider" ></div>
 
-    <button type="button" class="send-button" >
+    <button type="button" class="button-meed" >
         <a href="/login">LOGIN</a>
     </button>
 </form>

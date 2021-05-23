@@ -10,7 +10,7 @@
         include('../../components/Input/index',
             {
                 label: 'CPF:',
-                name: 'user',
+                name: 'cpf',
                 type: "text",
                 mask: '$$$.$$$.$$$-$$',
                 error: 'CPF é obrigatório !!'
@@ -30,11 +30,22 @@
     %>
     <div class="divider" ></div>
 
-    <button type="submit" class="send-button" >ENTRAR</button>
+    <button type="submit" class="button-meed" >ENTRAR</button>
 
     <div class="divider" ></div>
 
-    <button type="button" class="send-button" >
+    <button type="button" class="button-meed" >
         <a href="/register">CADASTRAR</a>
     </button>
 </form>
+<script>
+    
+    window.addEventListener('load', () => {
+        if ("<%= message %>"){
+            window.history.pushState({}, null, '/login')
+            setTimeout(() => {
+                document.getElementsByClassName('alert-register')[0].className = "alert-register hidden"
+            }, 6000)
+        }
+    })
+</script>

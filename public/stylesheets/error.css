@@ -33,7 +33,7 @@ body{
     border-color: rgb(181,144,207);
   }
 
-  .send-button{
+  .button-meed{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,7 @@ body{
     transition: all 300ms;
   }
   
-  .send-button:active{
+  .button-meed:active{
     transform: scale(1.007);
     box-shadow: 0 0 10px 3px rgb(181,144,207);
   }

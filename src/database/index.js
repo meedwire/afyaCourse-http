@@ -30,13 +30,15 @@ class DB {
 
     async execute(query, values) {
         try {
+            let data = null;
+
             const client = await pool.connect()
 
-            await client.query(query, values)
+            data = await client.query(query, values)
 
             await client.end()
 
-            return true
+            return data.rows[0] || true
         } catch (error) {
             console.log(error)
             throw new Error('Ops... Algo deu  errado ao tentar executar a query')
